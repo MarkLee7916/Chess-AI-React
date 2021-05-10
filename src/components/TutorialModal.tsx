@@ -39,7 +39,7 @@ export const TutorialModal = ({ isVisible, hide }: Props) => {
             </p>
 
             <p className="modal-text">
-                Mobile: Click the tile you want to move from, and then click the tile you want to move to
+                PC and Mobile: Click the tile you want to move from, and then click the tile you want to move to
             </p>
 
             <p className="modal-text">
@@ -105,7 +105,7 @@ export const TutorialModal = ({ isVisible, hide }: Props) => {
             <h1 className="modal-heading">That's all folks</h1>
             <p className="modal-text">
                 If you enjoyed you can take a look at the source code on
-                <a href="https://github.com/MarkLee7916/Chess-with-AI-React"> GitHub</a>
+                <a href="https://github.com/MarkLee7916/Chess-AI-React"> GitHub</a>
             </p>
 
             <img src="assets/code.png" className="modal-image"></img>
