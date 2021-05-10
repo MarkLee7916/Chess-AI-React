@@ -70,7 +70,7 @@
     background-color: white;
 }
 
-.modal > input {
+.modal > textarea {
     border: 2px solid black;
 }
 

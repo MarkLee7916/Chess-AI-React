@@ -10,6 +10,7 @@ interface Props {
     notifyDrop: (fromPos: Pos, toPos: Pos) => void
     highlightTilesToMove: (pos: Pos) => void
     clearHighlightedTilesToMove: () => void
+    notifyClicked: (pos: Pos) => void
 }
 
 const pieceToUnicode = new HashMap<Piece, string>([
@@ -27,7 +28,7 @@ const pieceToUnicode = new HashMap<Piece, string>([
     [{ team: Team.Black, type: PieceType.Rook }, "♜"],
 ]);
 
-export const Tile = ({ piece, pos, isHighlighted, notifyDrop, highlightTilesToMove, clearHighlightedTilesToMove }: Props) => {
+export const Tile = ({ piece, pos, isHighlighted, notifyDrop, highlightTilesToMove, clearHighlightedTilesToMove, notifyClicked }: Props) => {
     function getTileBackgroundColor() {
         if (isHighlighted) {
             return "#32CD32";
@@ -57,6 +58,7 @@ export const Tile = ({ piece, pos, isHighlighted, notifyDrop, highlightTilesToMo
             className="tile"
             style={{ backgroundColor: getTileBackgroundColor() }}
             draggable="true"
+            onClick={() => notifyClicked(pos)}
             onDragStart={handleDragStart}
             onDragOver={event => event.preventDefault()}
             onDragEnter={event => event.preventDefault()}

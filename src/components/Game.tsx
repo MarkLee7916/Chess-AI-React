@@ -181,7 +181,7 @@ export const Game = () => {
     }
 
     return (
-        <div onError={() => location.reload()}>
+        <div>
             <div id="page" style={{ opacity: modalVisible === Modal.None ? "1" : "0.2" }}>
                 <div id="menu">
                     <button onClick={() => setModalVisible(Modal.MoveHistory)} className="menu-button">

@@ -39,7 +39,7 @@ export const TutorialModal = ({ isVisible, hide }: Props) => {
             </p>
 
             <p className="modal-text">
-                Mobile: Not supported yet, but will likely be a tile tapping system
+                Mobile: Click the tile you want to move from, and then click the tile you want to move to
             </p>
 
             <p className="modal-text">

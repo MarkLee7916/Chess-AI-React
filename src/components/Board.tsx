@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { GameBoard, isSameCoord, isTileOccupiedByTeam, Pos } from "../game/board";
 import { generateLegalMovesFromPos } from "../game/game";
 import { Piece, Team } from "../game/piece";
@@ -14,6 +14,19 @@ interface Props {
 export const Board = ({ team, running, board, notifyDrop }: Props) => {
     // A list of positions that the currently selected piece can legally move to
     const [highlightedTargetPositions, setHighlightedTargetPositions] = useState([]);
+
+    const startOfMove = useRef(null);
+
+    function handleTileClicked(pos: Pos) {
+        if (startOfMove.current === null) {
+            startOfMove.current = pos;
+            highlightTargetPositions(pos);
+        } else {
+            notifyDrop(startOfMove.current, pos);
+            startOfMove.current = null;
+            clearHighlightedTargetPositions();
+        }
+    }
 
     // Given a position, compute positions it can legally move to and highlight them
     function highlightTargetPositions(pos: Pos) {
@@ -45,6 +58,7 @@ export const Board = ({ team, running, board, notifyDrop }: Props) => {
                         clearHighlightedTilesToMove={clearHighlightedTargetPositions}
                         piece={piece}
                         notifyDrop={notifyDrop}
+                        notifyClicked={handleTileClicked}
                         key={`${rowIndex}-${colIndex}`}
                     />
                 )}

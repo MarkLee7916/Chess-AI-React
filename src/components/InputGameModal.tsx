@@ -31,7 +31,7 @@ export const InputGameModal = ({ isVisible, hide, uploadGame }: Props) => {
                 Note that this will erase the current game, so you should probably save it beforehand
             </p>
 
-            <input onChange={event => currentInput.current = event.target.value} type="text" className="modal-input-game" />
+            <textarea onChange={event => currentInput.current = event.target.value} className="modal-input-game" />
 
             <button className="modal-button modal-bottom-right" onClick={hide}>Close</button>
             <button className="modal-button modal-bottom-left" onClick={handleInput}>Submit</button>
