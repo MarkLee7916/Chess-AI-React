@@ -32,7 +32,7 @@ export function weightedBoardPositionalEvaluation(team: Team, board: GameBoard, 
 function genericEvaluate(team: Team, board: GameBoard, aggression: number, score: (pos: Pos) => number) {
     return positions.reduce((totalScore: number, pos: Pos) => {
         if (isTileClear(board, pos)) {
-            return;
+            return totalScore;
         }
 
         if (isTileOccupiedByTeam(team, board, pos)) {
