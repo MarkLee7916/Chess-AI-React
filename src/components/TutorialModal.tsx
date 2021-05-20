@@ -56,11 +56,11 @@ export const TutorialModal = ({ isVisible, hide }: Props) => {
         <div className="modal">
             <h1 className="modal-heading">Configuring the AI</h1>
             <p className="modal-small-text">
-                The dropdown menu allows you to control how the AI estimates whether a given board is in it's favour or not
+                The dropdown menu allows you to control how the AI estimates whether a given board is in its favour or not
             </p>
 
             <p className="modal-small-text">
-                A piece count evaluation means that the AI looks at how many of it's own pieces are on the board compared to it's opponents
+                A piece count evaluation means that the AI looks at how many of its own pieces are on the board compared to its opponents
             </p>
 
             <p className="modal-small-text">
@@ -74,8 +74,8 @@ export const TutorialModal = ({ isVisible, hide }: Props) => {
             </p>
 
             <p className="modal-small-text">
-                You can also configure how many moves the AI will looks ahead, as well as it's aggression. A high aggression makes the AI value
-                it's own pieces lower and your pieces higher, so it's more likely to sacrifice it's pieces to take yours
+                You can also configure how many moves the AI will look ahead, as well as its aggression. A high aggression makes the AI value
+                its own pieces lower and your pieces higher, so its more likely to sacrifice its pieces to take yours
             </p>
 
             <button className="modal-bottom-left modal-button" onClick={hide}>Skip Tutorial</button>
